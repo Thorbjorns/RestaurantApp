@@ -30,6 +30,9 @@ public class CartService {
         return cartRepository.findById(id);
     }
 
+    public Cart updateCart(Cart cart){
+        return cartRepository.save(cart);
+    }
 
 
 }
