@@ -1,9 +1,6 @@
 package com.example.restaurant.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Pizza {
@@ -13,15 +10,27 @@ public class Pizza {
     private String name;
     private String description;
     private int price;
+    @ManyToOne
+    @JoinColumn(name = "cart_id")
+    private Cart cart;
 
     public Pizza() {
     }
 
-    public Pizza(Long id, String name, String description, int price) {
+    public Pizza(Long id, String name, String description, int price, Cart cart) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;
+        this.cart = cart;
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
     }
 
     public Long getId() {
