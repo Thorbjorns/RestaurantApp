@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant App (Very simple)</title>
+</head>
+<body>
+<h1 align="center">Hello in Restaurant app!</h1>
+<br><br>
+<h2 align="center">Choose one of the options:</h2>
+<div align="center">
+<a th:href="@{pizza}">Pizza</a>
+</div>
+
+<ul>
+    <li
+            th:each= "pizza : ${pizza}">
+        <span th:text="${pizza.name}">Default </span>
+    </li>
+</ul>
+
+</body>
+</html>

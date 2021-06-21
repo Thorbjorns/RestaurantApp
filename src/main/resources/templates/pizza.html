@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pizza menu</title>
+</head>
+<body>
+<h1 align="center">Pizza menu!</h1>
+
+<a th:href="@{pizza}">Pizza</a>
+
+<ul>
+    <li
+            th:each= "pizza : ${pizza}">
+        <span th:text="${pizza.name}">Default </span>
+    </li>
+</ul>
+</body>
+</html>
